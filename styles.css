@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(240, 100%, 99%);
+    font-family: "Raleway", serif;
+    font-size: 16px;
+}
+
+h1 {
+    font-family: "Playwrite IN", serif;
+    color: gold;
+    text-align: center;
+}
+
+.main_container {
+    background-color: black;
+    width: 380px;
+    margin: auto;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    color: white;
+}
+
+#inputBtn_container {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+#inputBtn_container input {
+    flex: 1;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    border-radius: 1rem 0rem 0rem 1rem;
+}
+
+#inputBtn_container button {
+    width: 60px;
+    border-radius: 0rem 1rem 1rem 0rem;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: hsl(51, 100%, 50%);
+}
+
+#inputBtn_container button:hover {
+    color: green;
+    cursor: pointer;
+    background-color: hsl(51, 100%, 80%);
+}
+
+#list_items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1rem 1rem 2rem;
+    position: relative;
+}
+
+#list_items li {
+    list-style-type: none;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+#list_items li::before {
+    content: '';
+    width: 22px;
+    height: 22px;
+    background-image: url(notchecked.png);
+    position: absolute;
+    background-size: cover;
+    left: 0;
+}
+
+#list_items .checked{
+    text-decoration: line-through;
+    color: gold;
+    cursor: pointer;
+}
+
+#list_items .checked::before{
+    background-image: url(checked.png);
+}
+
+@keyframes dee {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    50% {
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+#list_items li span {
+    position: absolute;
+    right: 0px;
+    transition: 1s ease-in-out 1s;
+}
+
+#list_items li span:hover{
+    cursor: pointer;
+    animation: dee 2s ease-in-out 0.1s alternate infinite;
+}
